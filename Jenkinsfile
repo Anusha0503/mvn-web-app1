@@ -1,6 +1,6 @@
 node {
           stage ('checkout'){
-           git branch: 'master', git credentialsId: 'gitcredentials', url: 'https://github.com/Anusha0503/mvn-web-app1.git'
+           git branch: 'master', credentialsId: 'gitcredentials', url: 'https://github.com/Anusha0503/mvn-web-app1.git'
  
          }
    stage ('build'){ 
