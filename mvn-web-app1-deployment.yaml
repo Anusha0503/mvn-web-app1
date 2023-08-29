@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvn-web-app1-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvn-web-app1
+  template:
+    metadata:
+      labels:
+        app: mvn-web-app1
+    spec:
+      containers:
+      - name: mvn-web-app1-container
+        image: mydocker1405/mvn-web-app1:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: springboot1secret
